@@ -1,6 +1,8 @@
 package net.javavideotutorials.assignment1;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class LotteryNumberPicker 
@@ -21,6 +23,14 @@ public class LotteryNumberPicker
    */
   public Set<Integer> promptUserForLotteryNumbers () throws IOException
   {
-    return null;
+  	Set<Integer> userNumbers = new HashSet<>();
+		Scanner in = new Scanner(System.in);
+  	while(userNumbers.size() != 6)
+  	  userNumbers.add(in.nextInt());
+  	
+  	for (Integer anInt : userNumbers)
+		 	System.out.print(anInt);
+    return userNumbers;
+   
   }
 }

@@ -1,6 +1,7 @@
 package net.javavideotutorials.assignment1;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
@@ -62,8 +63,23 @@ public class PlayLottery
    * @param userNumbers the user picked numbers that were picked in the console
    * @return Set of matched numbers
    */
+	/*
+	 * To calculate the union, intersection, or set difference of two sets
+	 * nondestructively (without modifying either set), the caller must copy one set
+	 * before calling the appropriate bulk operation. The following are the
+	 * resulting idioms.
+	 * 
+	 * Set<Type> union = new HashSet<Type>(s1); union.addAll(s2);
+	 * 
+	 * Set<Type> intersection = new HashSet<Type>(s1); intersection.retainAll(s2);
+	 * 
+	 * Set<Type> difference = new HashSet<Type>(s1); difference.removeAll(s2);
+	 */
+  
   public Set<Integer> playLottery (Set<Integer> lotteryNumbers, Set<Integer> userNumbers)
   {
-    return null;
+  	Set<Integer> matchNumbers = new HashSet<>(userNumbers);
+  	matchNumbers.retainAll(lotteryNumbers);
+  	return matchNumbers;
   }
 }
